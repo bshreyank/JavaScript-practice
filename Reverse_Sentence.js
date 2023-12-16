@@ -21,7 +21,7 @@ function reverseSentence(sentence) {
 
     // Handling the last word in the sentence
     if (currentWord !== '') {
-        reversedSentence =reversedSentence+reverseWord(currentWord);
+        reversedSentence=reversedSentence+reverseWord(currentWord);
     }
 
     return reversedSentence;
