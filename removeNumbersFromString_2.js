@@ -1,17 +1,12 @@
 function removeNumbersFromString(inputString, substringsToRemove) {
-    for (let i = 0; i < substringsToRemove.length; i++) {
-        inputString = inputString.split(substringsToRemove[i]).join('');
-    }
+    substringsToRemove.forEach(substring => {
+        inputString = inputString.split(substring).join('');
+    });
 
     // Remove any remaining numbers
-    let resultString = '';
-    for (let i = 0; i < inputString.length; i++) {
-        if (isNaN(parseInt(inputString[i]))) {
-            resultString += inputString[i];
-        }
-    }
+    inputString = inputString.replace(/\d+/g, '');
 
-    return resultString;
+    return inputString;
 }
 
 // Example usage
