@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Characters</title>
+</head>
+
+<body>
+
+    <div>
+        <input type="text" id="inputField" />
+        <button onclick="handle()">button</button>
+
+        <h1 id="result"></h1>
+    </div>
+
+    <script>
+        function handle() {
+            // Get user input from the input field
+            const inputData = document.getElementById('inputField').value;
+
+            // Remove spaces and convert to lowercase
+            let str = inputData.replaceAll(" ", "");
+            let arr = [...str.toLowerCase()];
+
+            // Identify and mark duplicate characters as 0
+            for (let i = 0; i < arr.length; i++) {
+                let i1 = arr[i];
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (i1 === arr[j]) {
+                        arr[i] = 0;
+                        arr[j] = 0;
+                    }
+                }
+            }
+
+            // Filter out characters marked as 0 to get unique characters
+            const uniqueChars = arr.filter((e) => e !== 0);
+
+            // Display the result in the HTML
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = uniqueChars.join(' ');
+
+        }
+
+    </script>
+
+</body>
+
+</html>
