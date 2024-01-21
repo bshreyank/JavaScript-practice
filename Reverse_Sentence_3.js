@@ -6,10 +6,9 @@ function reverseBySeparator(string, sepatator){
 
 //dlroW olleH
 var reverseEntireSentence = reverseBySeparator(string, "");
+console.log(reverseEntireSentence);
 
 //olleH dlroW
 var reverseEachWord = reverseBySeparator(reverseEntireSentence," ");
-
-console.log(reverseEntireSentence);
 console.log(reverseEachWord);
 
