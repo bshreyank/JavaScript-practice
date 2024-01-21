@@ -1,4 +1,4 @@
-array = [1,4,4,6,7,1]
+array = [1,10,4,4,6,2,7,1,2,9,10]
 const uniqueArray=[...new Set(array)]
 console.log(uniqueArray)
 //////////////////////////////////////////////////
