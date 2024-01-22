@@ -1,9 +1,9 @@
 /*
 
-Q. How to find maximum value in a numbered array?
+Q. How to find maximum and minimum value in a numbered array?
 
-• To find maximum value in a numbered array, we are implementing a
-method which will find Max value.
+• To find maximum and minimum value in a numbered array, we are implementing a
+method which will find Max value, and find Min value.
 
 • Inside the method, we are making use of the Array reduce method and
 for each element, we will check if the value is greater than the previous
@@ -19,7 +19,14 @@ function findMaxValue(arr) {
   })
 }
 
+function findMinValue(arr) {
+  return arr.reduce((prev, curr) => {
+    return prev < curr ? prev : curr
+  })
+}
+
 console.log('Find Max Value: ', findMaxValue(NumberArray))
+console.log('Find Min Value: ', findMinValue(NumberArray))
 
 //==================================================>>>>
 const NumArr = [1, 2, 3, 4, 5, 6, 7, 765, 4354]
@@ -27,8 +34,12 @@ const NumArr = [1, 2, 3, 4, 5, 6, 7, 765, 4354]
 const MaxNos = NumArr.reduce((a, b) => {
   return a > b ? a : b
 })
-
 console.log('MaxNos: ', MaxNos)
+
+const MinNos = NumArr.reduce((a, b) => {
+  return a < b ? a : b
+})
+console.log('MinNos: ', MaxNos)
 
 //==================================================>>>>
 
